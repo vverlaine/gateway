@@ -24,7 +24,7 @@ public class JwtAuthFilter implements GlobalFilter, Ordered {
 
     private final SecretKey key;
     private final List<String> openPaths = List.of(
-            "/auth/", "/auth/login", "/actuator/health"
+            "/auth/", "/auth/login", "/actuator/health", "/actuator/**"
     );
 
     public JwtAuthFilter(@Value("${app.jwt.secret}") String base64Secret) {
