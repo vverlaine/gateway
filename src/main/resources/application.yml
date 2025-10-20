@@ -9,6 +9,8 @@ spring:
           uri: ${AUTH_BASE_URL}
           predicates:
             - Path=/auth/**,/actuator/health
+          filters:
+            - StripPrefix=1
   webflux:
     cors:
       mappings:
